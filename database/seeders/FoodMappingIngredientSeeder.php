@@ -350,6 +350,131 @@ class FoodMappingIngredientSeeder extends Seeder
                 'ingredientsId' => 2,
                 'amount' => 8
             ],
+            [
+                'foodId' => 12,
+                'ingredientsId' => 1,
+                'amount' => 3
+            ],
+            [
+                'foodId' => 12,
+                'ingredientsId' => 4,
+                'amount' => 5
+            ],
+            [
+                'foodId' => 12,
+                'ingredientsId' => 15,
+                'amount' => 4
+            ],
+            [
+                'foodId' => 12,
+                'ingredientsId' => 14,
+                'amount' => 8
+            ],
+            [
+                'foodId' => 12,
+                'ingredientsId' => 12,
+                'amount' => 8
+            ],
+            [
+                'foodId' => 13,
+                'ingredientsId' => 1,
+                'amount' => 3
+            ],
+            [
+                'foodId' => 13,
+                'ingredientsId' => 12,
+                'amount' => 5
+            ],
+            [
+                'foodId' => 13,
+                'ingredientsId' => 10,
+                'amount' => 4
+            ],
+            [
+                'foodId' => 13,
+                'ingredientsId' => 5,
+                'amount' => 8
+            ],
+            [
+                'foodId' => 13,
+                'ingredientsId' => 2,
+                'amount' => 8
+            ],
+            [
+                'foodId' => 14,
+                'ingredientsId' => 1,
+                'amount' => 3
+            ],
+            [
+                'foodId' => 14,
+                'ingredientsId' => 4,
+                'amount' => 5
+            ],
+            [
+                'foodId' => 14,
+                'ingredientsId' => 2,
+                'amount' => 4
+            ],
+            [
+                'foodId' => 14,
+                'ingredientsId' => 9,
+                'amount' => 8
+            ],
+            [
+                'foodId' => 14,
+                'ingredientsId' => 10,
+                'amount' => 8
+            ],
+            [
+                'foodId' => 15,
+                'ingredientsId' => 1,
+                'amount' => 3
+            ],
+            [
+                'foodId' => 15,
+                'ingredientsId' => 10,
+                'amount' => 5
+            ],
+            [
+                'foodId' => 15,
+                'ingredientsId' => 13,
+                'amount' => 4
+            ],
+            [
+                'foodId' => 15,
+                'ingredientsId' => 8,
+                'amount' => 8
+            ],
+            [
+                'foodId' => 15,
+                'ingredientsId' => 4,
+                'amount' => 8
+            ],
+            [
+                'foodId' => 16,
+                'ingredientsId' => 5,
+                'amount' => 3
+            ],
+            [
+                'foodId' => 16,
+                'ingredientsId' => 9,
+                'amount' => 5
+            ],
+            [
+                'foodId' => 16,
+                'ingredientsId' => 1,
+                'amount' => 4
+            ],
+            [
+                'foodId' => 16,
+                'ingredientsId' => 6,
+                'amount' => 8
+            ],
+            [
+                'foodId' => 16,
+                'ingredientsId' => 3,
+                'amount' => 8
+            ],
         ]);
     }
 }

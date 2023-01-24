@@ -185,6 +185,102 @@ class FoodMappingRecipe extends Seeder
                 'foodId' => 10,
                 'recipeId' => 24,
             ],
+            [
+                'foodId' => 11,
+                'recipeId' => 1,
+            ],
+            [
+                'foodId' => 11,
+                'recipeId' => 4,
+            ],
+            [
+                'foodId' => 11,
+                'recipeId' => 9,
+            ],
+            [
+                'foodId' => 11,
+                'recipeId' => 24,
+            ],
+            [
+                'foodId' => 12,
+                'recipeId' => 12,
+            ],
+            [
+                'foodId' => 12,
+                'recipeId' => 4,
+            ],
+            [
+                'foodId' => 12,
+                'recipeId' => 3,
+            ],
+            [
+                'foodId' => 12,
+                'recipeId' => 24,
+            ],
+            [
+                'foodId' => 13,
+                'recipeId' => 2,
+            ],
+            [
+                'foodId' => 13,
+                'recipeId' => 9,
+            ],
+            [
+                'foodId' => 13,
+                'recipeId' => 15,
+            ],
+            [
+                'foodId' => 13,
+                'recipeId' => 24,
+            ],
+            [
+                'foodId' => 14,
+                'recipeId' => 14,
+            ],
+            [
+                'foodId' => 14,
+                'recipeId' => 11,
+            ],
+            [
+                'foodId' => 14,
+                'recipeId' => 15,
+            ],
+            [
+                'foodId' => 14,
+                'recipeId' => 24,
+            ],
+            [
+                'foodId' => 15,
+                'recipeId' => 11,
+            ],
+            [
+                'foodId' => 15,
+                'recipeId' => 10,
+            ],
+            [
+                'foodId' => 15,
+                'recipeId' => 1,
+            ],
+            [
+                'foodId' => 15,
+                'recipeId' => 24,
+            ],
+            [
+                'foodId' => 16,
+                'recipeId' => 10,
+            ],
+            [
+                'foodId' => 16,
+                'recipeId' => 1,
+            ],
+            [
+                'foodId' => 16,
+                'recipeId' => 15,
+            ],
+            [
+                'foodId' => 16,
+                'recipeId' => 24,
+            ],
         ]);
     }
 }
