@@ -27,6 +27,6 @@ class FoodMappingIngredients extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('food_mapping_ingredients');
     }
 }

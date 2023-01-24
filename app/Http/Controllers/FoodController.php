@@ -2,32 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
+use App\Models\City;
 use App\Models\Food;
-use App\Models\FoodMappingIngredients;
-use App\Models\FoodMappingRecipe;
-use App\Models\Ingredient;
-use App\Models\Recipe;
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
-class MainController extends Controller
+class FoodController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function __construct()
     {
-        $image = "background.png";
-        $food = Food::all();
-        return view('home', compact('image','food'));
+        $this->middleware('auth');
     }
 
-    public function successForm()
+    public function index()
     {
-        return redirect()->back()->with('message', 'Your Message Have Been Received!');
+        // $bookmark = DB::table('books')->where('user_id','=',auth()->user()->id);
+        // dd(Book::all());
+        return view('recipe' , [
+            'cities' => City::all(),
+            'books' => Book::all()->where('user_id','=',auth()->user()->id),
+            'foods' => Food::latest()->filter(request(['search','tag']))->paginate(6)
+        ]);
     }
 
     /**
@@ -35,13 +38,6 @@ class MainController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function detailCard($id){
-        $food = Food::findOrFail($id);
-
-        return view('detail', compact('food'))->with('ingredients', Ingredient::all())->with('recipe', Recipe::all())->with('food_mapping_ingredients', FoodMappingIngredients::all())->with('food_mapping_recipe', FoodMappingRecipe::all());
-    }
-
     public function create()
     {
         //
@@ -61,10 +57,10 @@ class MainController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Food  $food
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Food $food)
     {
         //
     }
@@ -72,10 +68,10 @@ class MainController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Food  $food
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Food $food)
     {
         //
     }
@@ -84,10 +80,10 @@ class MainController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Food  $food
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Food $food)
     {
         //
     }
@@ -95,10 +91,10 @@ class MainController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Food  $food
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Food $food)
     {
         //
     }

@@ -2,16 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\Food;
-use App\Models\FoodMappingIngredients;
-use App\Models\FoodMappingRecipe;
-use App\Models\Ingredient;
-use App\Models\Recipe;
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
-class MainController extends Controller
+class BookController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,14 +16,7 @@ class MainController extends Controller
      */
     public function index()
     {
-        $image = "background.png";
-        $food = Food::all();
-        return view('home', compact('image','food'));
-    }
-
-    public function successForm()
-    {
-        return redirect()->back()->with('message', 'Your Message Have Been Received!');
+        
     }
 
     /**
@@ -35,13 +24,6 @@ class MainController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function detailCard($id){
-        $food = Food::findOrFail($id);
-
-        return view('detail', compact('food'))->with('ingredients', Ingredient::all())->with('recipe', Recipe::all())->with('food_mapping_ingredients', FoodMappingIngredients::all())->with('food_mapping_recipe', FoodMappingRecipe::all());
-    }
-
     public function create()
     {
         //
@@ -53,18 +35,23 @@ class MainController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,Food $food)
     {
-        //
+        // dd($food);
+        Book::create([
+            'food_id' => $food->id,
+            'user_id' => auth()->user()->id
+        ]);
+        return redirect('/recipe');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Book $book)
     {
         //
     }
@@ -72,10 +59,10 @@ class MainController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Book $book)
     {
         //
     }
@@ -84,10 +71,10 @@ class MainController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Book $book)
     {
         //
     }
@@ -95,11 +82,13 @@ class MainController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Book $book)
     {
-        //
+        // dd($book);
+        $book->delete();
+        return redirect('/recipe');
     }
 }

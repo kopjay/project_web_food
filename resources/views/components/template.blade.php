@@ -32,7 +32,7 @@
               </a>
             </li>
             <li>
-              <a href="/" style="text-decoration: none">
+              <a href="#recipe" style="text-decoration: none">
                 <p class="text-dark ms-5" style="font-family: poppins;font-size: 20px;margin-top: 28px">Recipes</p>
               </a>
             </li>

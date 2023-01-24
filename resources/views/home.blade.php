@@ -1,12 +1,16 @@
 <x-template>
-    <div style="height:1000px;background-size: cover;background-image:url('')">
+    <div style="height:1000px;background-size: cover;background-image:url({{asset('images/background.png')}})">
         <div style="float: right;margin-top:auto;margin-bottom:auto;margin-right:180px;margin-top:300px">
             <p style="color:white;font-family:poppins;font-weight:bold;font-size:50px">Explore Our</p>
             <p style="color:white;font-family:poppins;font-weight:bold;font-size:50px">Indonesian Recipe</p>
             <p style="color:white;font-family:poppins;font-weight:550;font-size:18px;">Let's Start Cooking With Our Most Iconic Indonesian Food</p>
             <div>
-                <button style="background:linear-gradient(to right,#E42C3E,#EF7B3A);border-radius:10px;color:white;border:none;width:150px;height:50px;font-weight:bold;font-size:18px">Our Best Food</button>
-                <button style="background:#E3243E;border-radius:10px;color:white;border:none;width:150px;height:50px;font-weight:bold;font-size:18px;margin-left:30px">Our Recipes</button>
+                <a href="#recipe">
+                    <button style="background:linear-gradient(to right,#E42C3E,#EF7B3A);border-radius:10px;color:white;border:none;width:150px;height:50px;font-weight:bold;font-size:18px">Our Best Food</button>
+                </a>
+                <a href="{{url('recipe')}}">
+                    <button style="background:#E3243E;border-radius:10px;color:white;border:none;width:150px;height:50px;font-weight:bold;font-size:18px;margin-left:30px">Our Recipes</button>
+                </a>
             </div>
         </div>
     </div>
@@ -18,10 +22,10 @@
         </div>
         <p style="font-family:poppins;font-size:40px;text-align:center;color:#EF7B3A;font-weight:bold;margin-top:20px">Powered <span style="color:#303030">by</span></p>
         <div style="margin-top:30px">
-            <img src="{{Storage::url('logo/masterchef.png')}}" style="width:250px;height:150px;margin-left:50px">
-            <img src="{{Storage::url('logo/yellowfit.png')}}" style="width:250px;height:150px;margin-left:100px">
-            <img src="{{Storage::url('logo/royco.png')}}" style="width:170px;height:150px;margin-left:100px">
-            <img src="{{Storage::url('logo/mangkokku.png')}}" style="width:200px;height:150px;margin-left:100px">
+            <img src="{{asset('images/logo/masterchef.png')}}" style="width:250px;height:150px;margin-left:50px">
+            <img src="{{asset('images/logo/yellowfit.png')}}" style="width:250px;height:150px;margin-left:100px">
+            <img src="{{asset('images/logo/royco.png')}}" style="width:170px;height:150px;margin-left:100px">
+            <img src="{{asset('images/logo/mangkokku.png')}}" style="width:200px;height:150px;margin-left:100px">
         </div>
     </div>
     <div style="background-color: #C84250;height:1350px">
@@ -33,7 +37,7 @@
             @foreach($food->shuffle()->take(1) as $each_food)
                 <div class="bg-white" style="width:1000px;height:330px;border-radius:10px;">
                     <div class="d-flex">
-                        <img src="{{Storage::url('food/'.$each_food->image)}}" style="width:400px;height:350px;margin-top:-10px;margin-left:-130px;border-radius:50%">
+                        <img src="{{asset('images/food/'.$each_food->image)}}" style="width:400px;height:350px;margin-top:-10px;margin-left:-130px;border-radius:50%">
                         <div style="width:700px;padding:25px">
                             <p style="color:black;font-family:poppins;font-weight:600;font-size:28px;text-align:left">{{$each_food->name}}</p>
                             <p style="font-family: poppins;font-size:20px;text-align:justify">{{$each_food->description}}</p>
@@ -63,7 +67,7 @@
                         <div class="col">
                             <div class="bg-white" style="width:500px;height:200px;border-radius:10px;">
                                 <div class="d-flex">
-                                    <img src="{{Storage::url('food/'.$each_food->image)}}" style="width:250px;height:220px;margin-left:-110px;border-radius:50%">
+                                    <img src="{{asset('images/food/'.$each_food->image)}}" style="width:250px;height:220px;margin-left:-110px;border-radius:50%">
                                     <div class="d-flex" style="width:700px;padding:40px;margin-left:-40px">
                                         <div class="ms-5">
                                             <p style="color:black;font-family:poppins;font-weight:600;font-size:25px;text-align:left;margin-bottom:0px">{{$each_food->name}}</p>
@@ -136,7 +140,7 @@
     </div>
     
     <center>
-        <div style="background-color: #E2243E;height:1350px">
+        <div style="background-color: #E2243E;height:1350px" id="recipe">
             <p style="font-family: poppins;font-weight:bold;font-size:40px;text-align:center;color:white;padding-top:30px">Top Recipes of The Week</p>
             <div class="container">
                 <div class="row p-5" style="border:5px solid white;width:1000px">
@@ -144,7 +148,7 @@
                     @foreach($food->take(10) as $each_food)
                         @if($count == 1)
                             <div class="col" style="margin-left:-60px">
-                                <div class="d-flex p-2" style="border-radius:10px;width:880px;margin-left:60px;background-size:cover;background:linear-gradient( rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5)100%),url('{{Storage::url('food/'.$each_food->image)}}');opacity:1;background-position:center;">
+                                <div class="d-flex p-2" style="border-radius:10px;width:880px;margin-left:60px;background-size:cover;background:linear-gradient( rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5)100%),url('{{asset('images/food/'.$each_food->image)}}');opacity:1;background-position:center;">
                                     <div style="border-radius:50%;background:#FFD700;height:60px;width:60px;margin-left:10px;vertical-align:middle">
                                             <p style="font-family: poppins;color:white;vertical-align:middle;font-size:40px;font-weight:bold">{{$count}}</p> 
                                         </div>
@@ -154,7 +158,7 @@
                             </div>
                         @elseif($count == 2)
                             <div class="col mt-4" style="margin-left:-60px">
-                                <div class="d-flex p-2" style="border-radius:10px;width:880px;margin-left:60px;background:linear-gradient( rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5)100%),url('{{Storage::url('food/'.$each_food->image)}}');opacity:1;background-position:center;">
+                                <div class="d-flex p-2" style="border-radius:10px;width:880px;margin-left:60px;background:linear-gradient( rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5)100%),url('{{asset('images/food/'.$each_food->image)}}');opacity:1;background-position:center;">
                                     <div style="border-radius:50%;background:#C0C0C0;height:60px;width:60px;margin-left:10px;vertical-align:middle">
                                             <p style="font-family: poppins;color:white;vertical-align:middle;font-size:40px;font-weight:bold">{{$count}}</p> 
                                         </div>
@@ -164,7 +168,7 @@
                             </div>
                         @elseif($count == 3)
                             <div class="col mt-4" style="margin-left:-60px">
-                            <div class="d-flex p-2" style="border-radius:10px;width:880px;margin-left:60px;background:linear-gradient( rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5)100%),url('{{Storage::url('food/'.$each_food->image)}}');opacity:1;background-position:center;">
+                            <div class="d-flex p-2" style="border-radius:10px;width:880px;margin-left:60px;background:linear-gradient( rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5)100%),url('{{asset('images/food/'.$each_food->image)}}');opacity:1;background-position:center;">
                                     <div style="border-radius:50%;background:#FF8812;height:60px;width:60px;margin-left:10px;vertical-align:middle">
                                             <p style="font-family: poppins;color:white;vertical-align:middle;font-size:40px;font-weight:bold">{{$count}}</p> 
                                         </div>
@@ -174,7 +178,7 @@
                             </div>
                         @else
                             <div class="col mt-4" style="margin-left:-60px">
-                                <div class="d-flex p-2" style="border-radius:10px;width:880px;margin-left:60px;background:linear-gradient( rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5)100%),url('{{Storage::url('food/'.$each_food->image)}}');opacity:1;background-position:center;">
+                                <div class="d-flex p-2" style="border-radius:10px;width:880px;margin-left:60px;background:linear-gradient( rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5)100%),url('{{asset('images/food/'.$each_food->image)}}');opacity:1;background-position:center;">
                                     <div style="border-radius:50%;height:60px;width:60px;margin-left:10px;vertical-align:middle">
                                             <p style="font-family: poppins;color:white;vertical-align:middle;font-size:40px;font-weight:bold">{{$count}}</p> 
                                         </div>

@@ -13,7 +13,10 @@ class FoodMappingRecipe extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('food_mapping_recipe', function (Blueprint $table) {
+            $table->integer('foodId');
+            $table->integer('recipeId');
+        });
     }
 
     /**
@@ -23,6 +26,6 @@ class FoodMappingRecipe extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('food_mapping_recipe');
     }
 }

@@ -21,6 +21,7 @@ class Food extends Migration
             $table->string('difficultyCook');
             $table->string('image');
             $table->longText('description');
+            $table->timestamps();
         });
     }
 
@@ -31,6 +32,6 @@ class Food extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('food');
     }
 }

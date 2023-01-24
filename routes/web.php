@@ -32,3 +32,12 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\MainController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('home');
 Route::post('/success', [App\Http\Controllers\MainController::class,'successForm']);
+
+
+Route::get('/recipe',[App\Http\Controllers\FoodController::class,'index']);
+
+Route::post('/index/bookmark/{food}',[App\Http\Controllers\BookController::class,'store']);
+Route::post('/bookmark/{food}',[App\Http\Controllers\BookController::class,'store']);
+Route::get('/bookmark/delete/{book}',[App\Http\Controllers\BookController::class,'destroy']);
+
+Route::get('/detail/{id}', [App\Http\Controllers\MainController::class,'detailCard']);
