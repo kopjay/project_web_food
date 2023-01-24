@@ -153,7 +153,7 @@
                                             <p style="font-family: poppins;color:white;vertical-align:middle;font-size:40px;font-weight:bold">{{$count}}</p> 
                                         </div>
                                     <p style="font-family: poppins;color:white;font-size:30px;font-weight:bold;margin-top:5px;margin-left:50px">{{$each_food->name}}</p>
-                                    <button type="button" class="btn btn-light" style="font-family: poppins;font-weight:bold;border-radius:30px;width:150px;height:40px;margin-top:10px;margin-left:auto;order:2">View More</button>
+                                    <a href="{{url('detail/'.$each_food->id)}}" type="button" class="btn btn-light" style="font-family: poppins;font-weight:bold;border-radius:30px;width:150px;height:40px;margin-top:10px;margin-left:auto;order:2">View Recipe</a>
                                 </div>
                             </div>
                         @elseif($count == 2)
@@ -163,7 +163,7 @@
                                             <p style="font-family: poppins;color:white;vertical-align:middle;font-size:40px;font-weight:bold">{{$count}}</p> 
                                         </div>
                                     <p style="font-family: poppins;color:white;font-size:30px;font-weight:bold;margin-top:5px;margin-left:50px">{{$each_food->name}}</p>
-                                    <button type="button" class="btn btn-light" style="font-family: poppins;font-weight:bold;border-radius:30px;width:150px;height:40px;margin-top:10px;margin-left:auto;order:2">View More</button>
+                                    <a href="{{url('detail/'.$each_food->id)}}" type="button" class="btn btn-light" style="font-family: poppins;font-weight:bold;border-radius:30px;width:150px;height:40px;margin-top:10px;margin-left:auto;order:2">View Recipe</a>
                                 </div>
                             </div>
                         @elseif($count == 3)
@@ -173,7 +173,7 @@
                                             <p style="font-family: poppins;color:white;vertical-align:middle;font-size:40px;font-weight:bold">{{$count}}</p> 
                                         </div>
                                     <p style="font-family: poppins;color:white;font-size:30px;font-weight:bold;margin-top:5px;margin-left:50px">{{$each_food->name}}</p>
-                                    <button type="button" class="btn btn-light" style="font-family: poppins;font-weight:bold;border-radius:30px;width:150px;height:40px;margin-top:10px;margin-left:auto;order:2">View More</button>
+                                    <a href="{{url('detail/'.$each_food->id)}}" type="button" class="btn btn-light" style="font-family: poppins;font-weight:bold;border-radius:30px;width:150px;height:40px;margin-top:10px;margin-left:auto;order:2">View Recipe</a>
                                 </div>
                             </div>
                         @else
@@ -183,7 +183,7 @@
                                             <p style="font-family: poppins;color:white;vertical-align:middle;font-size:40px;font-weight:bold">{{$count}}</p> 
                                         </div>
                                     <p style="font-family: poppins;color:white;font-size:30px;font-weight:bold;margin-top:5px;margin-left:50px">{{$each_food->name}}</p>
-                                    <button type="button" class="btn btn-light" style="font-family: poppins;font-weight:bold;border-radius:30px;width:150px;height:40px;margin-top:10px;margin-left:auto;order:2">View More</button>
+                                    <a href="{{url('detail/'.$each_food->id)}}" type="button" class="btn btn-light" style="font-family: poppins;font-weight:bold;border-radius:30px;width:150px;height:40px;margin-top:10px;margin-left:auto;order:2">View Recipe</a>
                                 </div>
                             </div>
                         @endif
